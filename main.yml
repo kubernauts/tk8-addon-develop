@@ -1,0 +1,51 @@
+# create the application deployment
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: example-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spring-boot-app
+        tier: web
+    spec:
+      containers:
+      - name: example-app
+        image: muellermh/example:latest
+        ports:
+        - containerPort: 8080
+---
+# create a nodeport service
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-service
+  labels:
+    app: spring-boot-app
+    tier: web
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+  selector:
+    app: spring-boot-app
+    tier: web
+
+# ---
+# load balancer example
+# apiVersion: v1
+# kind: Service
+# metadata:
+#  name: example-service
+#  labels:
+#    app: spring-boot-app
+#    tier: web
+# spec:
+#  type: LoadBalancer
+#  ports:
+#  - port: 8080
+#  selector:
+#    app: spring-boot-app
+#    tier: web
