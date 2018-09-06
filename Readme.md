@@ -1,66 +1,28 @@
-# Project Title
-
-One Paragraph of project description goes here
+# TK8 CLi example Addon for developer
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you all information you need to create your own tk8 addons on top of your kubernetes cluster
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+This addon was created for the tk8 cli you could find it here: https://github.com/kubernauts/tk8
+Addon integration is supported on Version 0.5.0 and greater
+
+Alternative you can apply the main.yml directly with kubectl
+
+## Development
+
+Create your own addons for TK8 is easy as well.
 
 ```bash
-Give examples
+./tk* addon create my-addon
 ```
 
-### Installing
+Then you can provide the main.yml with your addon components.
+Also it is possible to add a main.sh file wich runs befor the main.yml is applyed to the cluster. So you can do some more stuff or generate a main.yml from subfolder yaml files.
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```bash
-Give the example
-```
-
-And repeat
-
-```bash
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```bash
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```bash
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+To get more support join us on [Slack](https://kubernauts-slack-join.herokuapp.com)
 
 ## Contributing
 
@@ -74,11 +36,11 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/kubernauts/tk8/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
